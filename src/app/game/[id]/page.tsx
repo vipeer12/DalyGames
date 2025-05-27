@@ -9,7 +9,7 @@ import { Metadata } from "next";
 type PropsParams = {
   params: {
     id: string;
-  };
+  }
 };
 
 export async function generateMetadata({ params }: PropsParams): Promise<Metadata> {
@@ -62,11 +62,7 @@ async function getGameSorted() {
   }
 }
 
-export default async function Game({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
+export default async function Game({params: { id }}: {params: { id: string }}) {
   const data: GameProps = await getData(id);
   const sortedGame: GameProps = await getGameSorted();
 
