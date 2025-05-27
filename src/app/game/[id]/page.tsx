@@ -6,10 +6,12 @@ import { Label } from "./components/label";
 import { GameCard } from "@/components/gamecard";
 import { Metadata } from "next";
 
+type Params = Promise<{ id: string }>
+
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ id: string }>
+  params: Params
 }): Promise<Metadata> {
   try {
     const { id } = await params;
