@@ -12,9 +12,7 @@ type PropsParams = {
   };
 };
 
-export async function generateMetadata({
-  params,
-}: PropsParams): Promise<Metadata> {
+export async function generateMetadata({ params }: PropsParams): Promise<Metadata> {
   try {
     const response: GameProps = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&id=${params.id}`,{ cache: "no-store" })
       .then((res) => res.json())
